@@ -1,0 +1,79 @@
+1. Register : http://127.0.0.1:8000/api/user/register/ [POST]
+
+{
+    "email" : "ben@gmail.com",
+    "name" : "ben",
+    "password" : "123"
+}
+
+
+2. Login :  http://127.0.0.1:8000/api/user/login/ [POST]
+
+{
+    "email" : "admin1@gmail.com",
+    "password" : "123"
+}
+
+3. Update Profile : http://127.0.0.1:8000/api/user/userDetails/<int:pk>/ [PATCH]
+
+{
+    "name" : "Ali"
+}
+
+4. Change Password : http://127.0.0.1:8000/api/user/changepassword/ [POST]
+
+{
+    "password" : "1236",
+    "password2" : "123"
+}
+
+5. Logout : http://127.0.0.1:8000/api/user/logout/ [POST]
+
+6. Add Money : http://127.0.0.1:8000/api/wallet/add-money/ [POST]
+
+{
+    "balance": 100.0
+}
+
+7. Send Money : http://127.0.0.1:8000/api/wallet/send-payment/ [POST]
+
+{
+    "receiver_email" : "azad@gmail.com",
+    "amount" : 100
+}
+
+8. Request Money : http://127.0.0.1:8000/api/wallet/request-payment/ [POST]
+
+{
+    "receiver" : 21,
+    "amount" : 100
+}
+
+9. Accept request : http://127.0.0.1:8000/api/wallet/accept-request/  [POST]
+
+{
+    "receiver" : 22,
+    "amount" :100.0
+}
+
+10. Decline Request : http://127.0.0.1:8000/api/wallet/decline-request/ [POST]
+
+{
+  "request": 1
+}
+
+11. Transaction history : http://127.0.0.1:8000/api/wallet/view-transactions/ [GET]
+
+
+STAFF SIDE
+
+1. View Transactions : http://127.0.0.1:8000/api/staff/transactions/<int:pk> [GET]
+
+2. Ban User : http://127.0.0.1:8000/api/staff/ban/<int : pk>/ [PATCH]
+
+{
+    "user_id" : 22,
+    "is_banned": true
+}
+
+
