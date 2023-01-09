@@ -10,8 +10,10 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['id', 'name', 'email', 'date_joined', 'is_active', '
-        
+        fields = ['id', 'name', 'email', 'date_joined', 'is_active', 'balance', 'transactions']
+        read_only_fields = ['id', 'date_joined', 'is_active', 'balance']
+
+    def get_transactions(self, obj):
         transactions = Transaction.objects.filter(Q(sender=obj) | Q(receiver=obj))
         return TransactionSerializer(transactions, many=True).data
 
